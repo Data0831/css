@@ -1,0 +1,522 @@
+/* --- Start of alert.css --- */
+#alert-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 9999;
+}
+
+.alert {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+/* --- End of alert.css --- */
+
+/* --- Start of select.css --- */
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4a90e2;
+}
+
+.select {
+    --background: #ffffff;
+    --color: #333333;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    background-color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 500;
+    width: auto;
+    flex-grow: 1;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.select.center {
+    margin: 0 5px;
+}
+
+.select:focus-within {
+    border-color: #4a90e2;
+    border-style: solid;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+.select.ion-focused {
+    border-color: #4a90e2;
+    border-style: solid;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+.select::part(text) {
+    color: #333333;
+    font-size: 16px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.select::part(icon) {
+    color: #666666;
+    opacity: 1;
+    font-size: 18px;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.select.select-expanded::part(icon) {
+    transform: rotate(180deg);
+}
+
+ion-alert {
+    --background: #ffffff;
+    --border-radius: 20px;
+    --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+ion-alert .alert-radio-group {
+    border: none !important;
+    padding: 8px 0;
+}
+
+ion-alert .alert-radio-button {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 0 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+
+ion-alert .alert-radio-label {
+    font-size: 17px;
+    color: #333333;
+    margin-left: 16px;
+}
+
+ion-alert .alert-radio-button[aria-checked="true"] .alert-radio-label {
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+
+ion-alert .alert-radio-icon {
+    border-color: #cccccc;
+}
+
+
+ion-alert .alert-radio-button[aria-checked="true"] .alert-radio-icon {
+    border-color: #4a90e2;
+}
+
+
+ion-alert .alert-radio-inner {
+    background-color: #4a90e2;
+}
+
+
+ion-alert .alert-radio-button .alert-button-inner {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+ion-alert .alert-radio-button:last-of-type .alert-button-inner {
+    border-bottom: none;
+}
+
+
+ion-alert .alert-button-group {
+    padding: 12px 16px 12px;
+}
+
+ion-alert .alert-button {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    border-radius: 8px;
+    margin: 0 8px !important;
+    height: 44px;
+}
+
+ion-alert .alert-button:not(.alert-button-role-cancel) {
+    background: #4a90e2;
+    color: #ffffff;
+}
+
+ion-alert .alert-button.alert-button-role-cancel {
+    background: #f0f2f5;
+    color: #555555;
+}
+/* --- End of select.css --- */
+
+/* --- Start of card.css --- */
+.food-detail-container {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.2em 0 !important;
+}
+
+.food-detail-container .food-image-container {
+    overflow: hidden;
+    margin: auto 0 !important;
+}
+
+.food-detail-container .food-image-container img {
+    border-radius: 0.8em;
+    border: solid 0.2em rgba(0, 0, 0, 0.4);
+}
+
+.food-detail-container .food-details-card {
+    padding: 0 1.2em !important;
+}
+
+.food-name {
+    font-size: 2em;
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+.food-subtitle-icon {
+    margin: 0.2em 0.2em 0.2em 0;
+}
+
+.food-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    overflow: hidden;
+    padding: 0px 0px 0px 0;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.food-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.food-title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.food-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    width: 100%;
+}
+
+.food-title-section hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    width: 100%;
+    margin: 2px 0;
+}
+
+
+/* --- End of card.css --- */
+
+/* --- Start of freshbar.css --- */
+.freshbar-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 6px;
+    position: relative;
+    overflow: hidden;
+    padding: 0px 0 0 0;
+    margin: 0px 0 0 0;
+}
+
+.freshbar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    position: static;
+    display: block;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.status span {
+    font-size: 1.25rem;
+    margin-right: 12px;
+}
+
+.status-green {
+    display: flex;
+    align-items: center;
+    background-color: #E8F5E9;
+    color: #2ECC71;
+    border: 1px solid #2ECC71;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.status-yellowgreen {
+    display: flex;
+    align-items: center;
+    background-color: #F1F8E9;
+    color: yellowgreen;
+    border: 1px solid yellowgreen;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.status-orange {
+    display: flex;
+    align-items: center;
+    background-color: #FFF3E0;
+    color: orange;
+    border: 1px solid orange;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.status-red {
+    display: flex;
+    align-items: center;
+    background-color: #FFEBEE; /* 或 #FFEBEE */
+    border: 1px solid #f44336;
+    color: #f44336;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.status-gray {
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    color: gray;
+    border: 1px solid gray;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.status-alert {
+    /* background-color: #FFF1F0;
+    border: 1px solid #FFCCC7; */
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.status-alert-icon {
+    font-size: 1.5rem;
+    margin-right: 12px;
+    /* color: #D9363E; */
+}
+
+.status-alert-text {
+    font-weight: 500;
+    font-size: 0.95rem;
+    /* color: #A82D34; */
+}
+/* --- End of freshbar.css --- */
+
+/* --- Start of header.css --- */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 2px solid #E0E0E0;
+    background-color: white;
+    font-weight: bold;
+}
+
+.top-nav .nav-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #212121;
+}
+
+.top-nav .actions .nav-button {
+    margin-left: 16px;
+}
+/* --- End of header.css --- */
+
+/* --- Start of food_info.css --- */
+.food-tag {
+    background-color: #E8F3FF;
+    color: #0063D1;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.info-container{
+    padding: 0 1.4em 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7em 0;
+}
+
+.info-group-row{
+    padding: 0.2em 0;
+}
+
+.info-group {
+    margin: 0.7em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-list .info-row:not(:last-child), .info-border{
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.info-row .info-inline{
+    display: inline-block;
+}
+
+.info-title{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: #757575
+}
+
+.info-text {
+    font-weight: 600;
+    color: #1A2533;
+    margin-left: 4px;
+}
+
+.info-icon {
+    color: #4CAF50;
+    font-size: 1.3em;
+    margin-right: 1em;
+}
+/* --- End of food_info.css --- */
+
+/* --- Start of common.css --- */
+.bg {
+    background-color: #F0F4F8 !important;
+    background-image: radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 50%, rgba(39, 174, 96, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 30% 80%, rgba(241, 196, 15, 0.05) 0%, transparent 15%) !important;
+    padding-bottom: 70px !important;
+}
+
+.bg-green {
+    background-color: green !important;
+}
+
+.bg-yellowgreen {
+    background-color: yellowgreen !important;
+}
+
+.bg-orange {
+    background-color: orange !important;
+}
+
+.bg-red {
+    background-color: red !important;
+}
+
+.bg-white {
+    background-color: white !important;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.text-green {
+    color: green !important;
+}
+
+.text-yellowgreen {
+    color: yellowgreen !important;
+}
+
+.text-orange {
+    color: orange !important;
+}
+
+.text-red {
+    color: red !important;
+}
+/* --- End of common.css --- */
+

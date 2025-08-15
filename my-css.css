@@ -1,4 +1,4 @@
-/* --- Start of alert.css --- */
+/* --- Start of alert.css ---*/
 /* 基礎容器樣式 */
 #alert-container {
     position: fixed;
@@ -64,22 +64,28 @@
     opacity: 0;
     transform: translateY(-100px);
 }
-/* --- End of alert.css --- */
-
-/* --- Start of loading.css --- */
-:root {
-    --primary-color: #4CAF50;
-    --text-primary: #212121;
-    --text-secondary: #757575;
-    --card-bg: #FFFFFF;
+/* 復原警報的特定樣式 */
+.undo-alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-body {
-    font-family: 'Noto Sans TC', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.undo-button {
+    background-color: #f0ad4e; /* 橘色，表示警告/可操作 */
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 1em;
+    font-weight: bold;
+    white-space: nowrap; /* 防止文字換行 */
 }
 
+/* --- End of alert.css ---*/
+
+/* --- Start of loading.css ---*/
 #loading-container {
     position: fixed;
     top: 0;
@@ -102,7 +108,7 @@ body {
 }
 
 .loading-box {
-    background: var(--card-bg);
+    background: #FFFFFF;
     border-radius: 24px;
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
     width: 90%;
@@ -128,7 +134,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: #4CAF50;
     margin: 0 6px;
     animation: dot-bounce 1.4s infinite ease-in-out both;
 }
@@ -143,7 +149,7 @@ body {
 
 .loading-text {
     font-size: 1.2rem;
-    color: var(--text-primary);
+    color: #212121;
     font-weight: 500;
 }
 
@@ -155,9 +161,9 @@ body {
         transform: scale(1.0);
     }
 }
-/* --- End of loading.css --- */
+/* --- End of loading.css ---*/
 
-/* --- Start of voice.css --- */
+/* --- Start of voice.css ---*/
 .voice-popup-overlay {
     position: fixed;
     top: 0;
@@ -270,18 +276,150 @@ body {
     color: #37474f;
     font-weight: 500;
 }
-/* --- End of voice.css --- */
 
-/* --- Start of animation.css --- */
+@keyframes wave-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2.2);
+        opacity: 0;
+    }
+}
+
+.webrecognition-hidden {
+position: absolute;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.webrecognition-hidden ion-row, .webrecognition-hidden ion-col {
+padding: 0;
+    margin: 0;
+}
+
+.webrecognition-hidden ion-button {
+margin: 0;
+}
+/* --- End of voice.css ---*/
+
+/* --- Start of marked.css ---*/
+/* markdown-styles.css */
+.markdown-content {
+  line-height: 1.2;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7em;
+}
+
+.markdown-content p {
+  margin: 0.5em 0;
+  line-height: 1.2;
+}
+
+.markdown-content h1 {
+  margin: 1.2em 0 0.6em 0;
+}
+
+.markdown-content h2 {
+  margin: 1em 0 0.5em 0;
+}
+
+.markdown-content h3 {
+  margin: 0.8em 0 0.4em 0;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+
+/* 針對列表的緊湊樣式 */
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0;
+  padding-left: 2em;
+}
+
+.markdown-content li {
+  margin: 0.1em 0;
+  line-height: 1.2;
+}
+
+/* 重要：針對巢狀列表的特殊處理 */
+.markdown-content li ul,
+.markdown-content li ol {
+  margin: 0.1em 0;
+  padding-left: 1em;
+  line-height: 1.2;
+}
+
+.markdown-content li li {
+  margin: 0;
+}
+
+.markdown-content ul ul,
+.markdown-content ol ol,
+.markdown-content ul ol,
+.markdown-content ol ul {
+  margin: 0;
+}
+/* --- End of marked.css ---*/
+
+/* --- Start of button.css ---*/
+.single-icon-center-container {
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button {
+    border: none;
+    border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4A90E2, #2980B9);
+}
+
+.icon-button .material-icons {
+    color: white;
+    font-size: 2em;
+}
+
+.outset-button {
+    padding: 1.5em 1.5em;
+    font-size: 1em;
+    margin: 0.5em;
+    cursor: pointer;
+    border: outset 0.1em black;
+    border-radius: unset;
+    width: 100%;
+    background-color: transparent;
+    color: black;
+}
+/* --- End of button.css ---*/
+
+/* --- Start of animation.css ---*/
 .pressable:active {
     border: 1px solid rgba(0, 0, 0, 0.05);
     transform: translateY(1px);
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 2vh 2vh 2vh 2vh;
 }
-/* --- End of animation.css --- */
+/* --- End of animation.css ---*/
 
-/* --- Start of select.css --- */
+/* --- Start of select.css ---*/
 .select-container {
     display: flex;
     justify-content: center;
@@ -428,9 +566,9 @@ ion-alert .alert-button.alert-button-role-cancel {
     background: #f0f2f5;
     color: #555555;
 }
-/* --- End of select.css --- */
+/* --- End of select.css ---*/
 
-/* --- Start of card.css --- */
+/* --- Start of card.css ---*/
 .food-detail-container {
     transition: all 0.3s ease;
     border: none;
@@ -513,9 +651,9 @@ ion-alert .alert-button.alert-button-role-cancel {
 }
 
 
-/* --- End of card.css --- */
+/* --- End of card.css ---*/
 
-/* --- Start of progressbar.css --- */
+/* --- Start of progressbar.css ---*/
 .progressbar-container {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -638,9 +776,9 @@ ion-alert .alert-button.alert-button-role-cancel {
 .bg-nutrient-7 { background-color: #FFCA28 !important; } /* Amber */
 .bg-nutrient-8 { background-color: #78909C !important; } /* Blue Grey */
 .bg-nutrient-9 { background-color: #5C6BC0 !important; } /* Indigo */
-/* --- End of progressbar.css --- */
+/* --- End of progressbar.css ---*/
 
-/* --- Start of header.css --- */
+/* --- Start of header.css ---*/
 .top-nav {
     display: flex;
     justify-content: space-between;
@@ -649,6 +787,8 @@ ion-alert .alert-button.alert-button-role-cancel {
     border-bottom: 2px solid #E0E0E0;
     background-color: white;
     font-weight: bold;
+    position: relative; /* 為了讓 z-index 生效 */
+    z-index: 1000; /* 低於 alert 的 9999 */
 }
 
 .top-nav .nav-button {
@@ -661,9 +801,9 @@ ion-alert .alert-button.alert-button-role-cancel {
 .top-nav .actions .nav-button {
     margin-left: 16px;
 }
-/* --- End of header.css --- */
+/* --- End of header.css ---*/
 
-/* --- Start of food_info.css --- */
+/* --- Start of food_info.css ---*/
 .food-tag {
     background-color: #E8F3FF;
     color: #0063D1;
@@ -730,9 +870,9 @@ ion-alert .alert-button.alert-button-role-cancel {
     font-size: 1.3em;
     margin-right: 1em;
 }
-/* --- End of food_info.css --- */
+/* --- End of food_info.css ---*/
 
-/* --- Start of common.css --- */
+/* --- Start of config.css ---*/
 .bg {
     background-color: #F0F4F8 !important;
     background-image: radial-gradient(circle at 10% 20%, rgba(74, 144, 226, 0.05) 0%, transparent 20%),
@@ -790,5 +930,5 @@ ion-alert .alert-button.alert-button-role-cancel {
     justify-content: center;
     align-items: center;
 }
-/* --- End of common.css --- */
+/* --- End of config.css ---*/
 
